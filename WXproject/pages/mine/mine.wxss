@@ -1,10 +1,12 @@
 /* pages/mine/mine.wxss */
 
 .User{
+  margin: 10rpx;
   display: flex;
   align-items: center;
   height: 130px;
-  background-color: aqua;
+  background: linear-gradient(to right, #1766e0, #7acbff);
+  border-radius: 3%;
 }
 
 .User image{
@@ -39,3 +41,40 @@
   height: 40rpx;
   width: 40rpx;
 }
+/* 充值金额 */
+.rechargelist{
+  display: flex;
+  align-items: center;
+  height:150rpx;
+  background-color: #ebebeb;
+  border-bottom: #e2dddd solid 1rpx;
+}
+.rechargelist text{
+margin-left: 40rpx;
+}
+.rechargelist input{
+  display: flex;
+  align-items: center;
+  width: 600rpx;
+  height: 100rpx;
+  background-color: #dddedf;
+  border-radius: 50rpx ;
+}
+
+.chargelist {
+  background-color: #ebebeb;
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  }
+
+  .item{
+    width: 25%;
+    height: 80rpx;
+    border: 1px solid rgb(150,62,252,0.3);
+    line-height: 80rpx;
+    text-align: center;
+    margin: 20rpx;
+    }

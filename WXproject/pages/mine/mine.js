@@ -8,22 +8,38 @@ Page({
     //表示账户余额
     balance: 0,
     datalist:[],
+    //登录获取用户信息
     BackHidden: true,
     nickName:'登录/注册',
     userInfo:{},
+    //向后台发送请求所用数据
     key:'',
     avatarUrl:'',
     phone:18851999169,
-    name:''
-    
+    name:'',
+    //充值输入框内容
+    inputValue:'',
+    //选择充值金额
+    rechargelist:[{id:0,sum:'20'},
+    {id:1,sum:'40'},{id:2,sum:'60'},
+    {id:3,sum:'100'},{id:4,sum:'200'},
+    {id:5,sum:'500'}],
+
   },
+
+  //充值金额
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
     this.getBalance();
   },
-
+  handleInput(event) {
+    this.setData({
+      inputValue: event.detail.value
+    });
+  },
   getBalance:function(){
   wx.request({
     url: 'http://localhost',
@@ -60,11 +76,11 @@ Page({
         console.log(res.code);
         wx.request({
           url: 'https://e.empowersim.net/Apilist/addappletmember',
-          method: 'POST',
+          method:"POST",
           data: {
-            name: '测试namu',
-            key: '测试kem',
-            phone: 18851999129
+            name: '测试name',
+            key: '测试key21',
+            phone: 13811111111
           },
           // header: {
           //   'content-type': 'application/json'

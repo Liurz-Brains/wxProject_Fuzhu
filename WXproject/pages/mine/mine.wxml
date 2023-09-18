@@ -4,6 +4,25 @@
   <text wx:if="{{BackHidden}}" class="log" bind:tap="Login">{{nickName}}</text>
   <view class="log">账户余额{{balance}}</view>
 </view>
+<!-- 输入框，输入充值金额 -->
+<view class="rechargelist">
+  <text>¥：</text>
+  <input value="{{inputValue}}" 
+  bindinput="handleInput"
+  placeholder="请填写充值金额" 
+  style="text-align: center;">
+  </input>
+</view>
+
+<!-- 选项框，选择充值金额 -->
+<view class="chargelist">
+  <view wx:for="{{rechargelist}}" 
+  class="item" 
+  wx:key="index">￥{{item.sum}}
+  </view>
+</view>
+
+
 
 <view class="Box">
   <view class="Sub-Upper"  bind:tap="Subhistory">
@@ -12,12 +31,7 @@
   </view>
 </view>
 
-<!-- <view class="Box">
-  <view bind:tap="toVoucher">
-     <text class="txt">优惠券</text>
-     <image class="raw" src="/Image/箭头.png"></image>
-  </view>
-</view> -->
+
 
 <view class="Box" >
   <view bind:tap="toUs">
