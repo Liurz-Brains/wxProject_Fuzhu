@@ -1,0 +1,41 @@
+/* pages/mine/mine.wxss */
+
+.User{
+  display: flex;
+  align-items: center;
+  height: 130px;
+  background-color: aqua;
+}
+
+.User image{
+  margin-left: 30rpx;
+  background-color: azure;
+  height: 150rpx;
+  width: 150rpx;
+  transform: scale(1.1);
+  border-radius: 50%;
+}
+
+.User .log{
+  font-family: 'Arial',sans-serif;
+  font-weight:bold;
+  margin-left: 40rpx;
+}
+.Box {
+  border-bottom: #bda7a7 solid 1rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:100rpx;
+  background-color: #F5F5F5;
+}
+.Box .txt{
+  text-align: left;
+  margin-left: 30rpx;
+}
+.Box .raw{
+  position: absolute;
+  right: 30rpx;
+  height: 40rpx;
+  width: 40rpx;
+}

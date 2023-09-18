@@ -1,0 +1,14 @@
+/* pages/home/home.wxss */
+.scan-con {
+  display: flex;
+  height: 50rpx;
+  width: auto;
+}
+.scan_image{
+  display: flex;
+  position:absolute;
+  top: 30rpx;
+  right: 30rpx;
+  height: 50rpx;
+  width: 50rpx;
+}

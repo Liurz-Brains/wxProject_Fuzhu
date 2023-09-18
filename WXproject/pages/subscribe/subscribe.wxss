@@ -1,0 +1,19 @@
+/* pages/subscribe/subscribe.wxss */
+.Sub{
+  border: #F5F5F5 solid 1rpx;
+  display: flex;
+  flex: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  background-color: #F5F5F5;
+}
+.list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.item{
+  display: flex;
+  margin-right: 10px;
+}

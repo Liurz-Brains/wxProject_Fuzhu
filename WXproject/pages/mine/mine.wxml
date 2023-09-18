@@ -1,0 +1,27 @@
+<!--pages/mine/mine.wxml-->
+<view class="User">
+  <image src="{{avatarUrl}}"></image>
+  <text wx:if="{{BackHidden}}" class="log" bind:tap="Login">{{nickName}}</text>
+  <view class="log">账户余额{{balance}}</view>
+</view>
+
+<view class="Box">
+  <view class="Sub-Upper"  bind:tap="Subhistory">
+     <text class="txt" >查看订单</text>
+     <image class="raw" src="/Image/箭头.png"></image>
+  </view>
+</view>
+
+<!-- <view class="Box">
+  <view bind:tap="toVoucher">
+     <text class="txt">优惠券</text>
+     <image class="raw" src="/Image/箭头.png"></image>
+  </view>
+</view> -->
+
+<view class="Box" >
+  <view bind:tap="toUs">
+     <text class="txt">关于我们</text>
+     <image class="raw" src="/Image/箭头.png"></image>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+<!--pages/subscribe/subscribe.wxml-->
+<view class="Sub">
+    <view wx:for="{{orderList}}" wx:key="index" class="list">
+       <view class="box">
+         <text class="item">{{item.orderNumber}}</text>
+         <text class="item">{{item.orderData}}</text>
+       </view>
+     </view>
+  </view>

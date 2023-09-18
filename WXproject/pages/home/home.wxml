@@ -1,0 +1,6 @@
+<!--pages/home/home.wxml-->
+
+<view class="scan-con">
+  <image bind:tap="scanCodeEvent" src="/Image/扫码.png" class="scan_image"></image>
+</view>
+
