@@ -2,28 +2,53 @@
 <view class="User">
   <image src="{{avatarUrl}}"></image>
   <text wx:if="{{BackHidden}}" class="log" bind:tap="Login">{{nickName}}</text>
-  <view class="log">账户余额{{balance}}</view>
+  <view class="log">账户余额   {{balance}}   元</view>
 </view>
 <!-- 输入框，输入充值金额 -->
 <view class="rechargelist">
   <text>¥：</text>
   <input value="{{inputValue}}" 
+  class="inputMoney"
+  type="number"
   bindinput="handleInput"
   placeholder="请填写充值金额" 
-  style="text-align: center;">
+  style="text-align: center;"
+  disabled="{{disableInput}}"
+  min="0" max="1000">
   </input>
+  <text style="margin-left: 10rpx;">元</text>
 </view>
 
 <!-- 选项框，选择充值金额 -->
 <view class="chargelist">
   <view wx:for="{{rechargelist}}" 
-  class="item" 
-  wx:key="index">￥{{item.sum}}
+  class= "item{{index == Select ? active:''}}"
+  data-id="{{index}}" 
+  wx:key="index"
+  bindtap="selectItem">￥{{item.sum}}
   </view>
 </view>
 
+<!-- 选择充值方式 -->
+<view class="Box-pay">
+  <text class="payStyle">充值方式</text>
+</view>
+<view class="paySelect">
+  <view class="wePay" bind:tap="WePay">
+    <image src="/Image/微信支付.png" mode="widthFix">
+    </image>
+    <text>微信支付</text>
+    <image class="paySelected" src="/Image/选中.png" mode="widthFix" wx:if="{{!showIndicator}}"></image>
+  </view>
+  <view class="wePay" bind:tap="ZhiPay">
+    <image src="/Image/支付宝支付.png" mode="widthFix">
+    </image>
+    <text>支付宝支付</text>
+    <image class="paySelected" src="/Image/选中.png" mode="widthFix" wx:if="{{showIndicator}}"></image>
+  </view>
+</view>
 
-
+<!-- 订单、关于我们 -->
 <view class="Box">
   <view class="Sub-Upper"  bind:tap="Subhistory">
      <text class="txt" >查看订单</text>
@@ -31,11 +56,14 @@
   </view>
 </view>
 
-
-
 <view class="Box" >
   <view bind:tap="toUs">
      <text class="txt">关于我们</text>
      <image class="raw" src="/Image/箭头.png"></image>
   </view>
+</view>
+
+<!-- 立即充值 -->
+<view class="payment" bind:tap="ToPayment">
+<text>立即充值</text>
 </view>

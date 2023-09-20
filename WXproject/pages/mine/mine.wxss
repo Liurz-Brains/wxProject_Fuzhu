@@ -41,24 +41,18 @@
   height: 40rpx;
   width: 40rpx;
 }
+
 /* 充值金额 */
 .rechargelist{
   display: flex;
+  justify-content: center;
   align-items: center;
-  height:150rpx;
+  height:100rpx;
   background-color: #ebebeb;
-  border-bottom: #e2dddd solid 1rpx;
 }
-.rechargelist text{
-margin-left: 40rpx;
-}
-.rechargelist input{
-  display: flex;
-  align-items: center;
-  width: 600rpx;
-  height: 100rpx;
-  background-color: #dddedf;
-  border-radius: 50rpx ;
+.inputMoney{
+  background-color: #c9c9c9;
+  border-radius: 50rpx;
 }
 
 .chargelist {
@@ -68,13 +62,90 @@ margin-left: 40rpx;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  border-top: #d1cbcb solid 1rpx;
   }
 
   .item{
     width: 25%;
     height: 80rpx;
     border: 1px solid rgb(150,62,252,0.3);
+    border-radius: 20rpx;
     line-height: 80rpx;
     text-align: center;
     margin: 20rpx;
     }
+
+    .itemleftBtn {
+      width: 25%;
+      height: 80rpx;
+      border: 1px solid rgb(150,62,252,0.3);
+      border-radius: 20rpx;
+      background-color: #89caf5;
+      line-height: 80rpx;
+      text-align: center;
+      margin: 20rpx;
+    }
+    /* 充值方式 */
+    .payStyle{
+      margin-left: 30rpx;
+      font-family: 'Arial',sans-serif;
+      font-weight:bold;
+    }
+
+.Box-pay{
+  border-bottom: #dad2d2 solid 1rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:80rpx;
+  background-color: #ebebeb;
+  margin-top: 10rpx;
+}
+.paySelect{
+  background-color: #ebebeb;
+  height: auto;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.wePay {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx; 
+}
+
+.wePay image {
+  width: 100%;
+  max-width: 30px; 
+  height: auto;
+  margin: 5px 60rpx; 
+}
+.wePay .paySelected{
+  width: 100%;
+  max-width: 20px; 
+  height: auto;
+  position: absolute;
+  right: 30rpx;
+}
+.indicator {
+  position: relative;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background-color: deepskyblue;
+}
+
+/* 立即充值 */
+.payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: linear-gradient(to right, #1766e0, #7acbff);
+}
+
+.payment text{
+  font-family: 'Arial',sans-serif;
+  font-weight:bold;
+}

@@ -11,7 +11,8 @@
     "pages/voucher/voucher",
     "pages/us/us",
     "pages/home/home",
-    "pages/webview/webview"
+    "pages/webview/webview",
+    "pages/payment/payment"
   ],
   "tabBar": {
     "list": [{
