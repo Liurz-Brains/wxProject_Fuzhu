@@ -11,6 +11,7 @@ Page({
     //登录获取用户信息
     BackHidden: true,
     nickName:'登录/注册',
+    tapTriggered: false,
     userInfo:{},
     //向后台发送请求所用数据
     key:'',
@@ -28,6 +29,7 @@ Page({
     {id:5,sum:'500'}],
     select:'',
     //选择支付方式
+    totalFee: 0,
     showIndicator: false,
   },
 
@@ -97,6 +99,9 @@ ZhiPay(event){
   },
   //获取登录信息
   Login: function(e){
+    if (this.data.tapTriggered) {
+      return; // 已经触发过事件，不执行后续逻辑
+    }
     wx.getUserProfile({
       desc: '获取登录信息',
       success:(res)=>{
@@ -116,23 +121,25 @@ ZhiPay(event){
     //登录，向后台请求数据
     wx.login({
       success: (res) => {
-        console.log(res.code);
         wx.request({
           url: 'https://e.empowersim.net/Apilist/addappletmember',
           method: 'POST',
           data: {
             name: '测试name',
             key: '测试key21',
-            phone: 13811111111
+            phone: 13811111111,
           },
           header: {
             'content-type': 'application/x-www-form-urlencoded'
           },
           success: (res) => {
-            console.log(res)
+            console.log(res);
             // var data = JSON.parse(res.data)
             // console.log(data);
           }
+        });
+        this.setData({
+          tapTriggered: true
         });
       }
     });
@@ -186,8 +193,31 @@ ToPayment(event){
       icon: 'none',
     });
   }else {
-    wx.navigateTo({
-      url: '/pages/payment/payment',
+    wx.cloud.callFunction({
+      name: 'pay',
+      data:{
+        body:'金额充值',
+        outTradeNo:"2608230605"+Date.parse(new Date()),
+        totalFee: 10
+      },
+      success: res =>{
+        console.log("成功获取支付参数",res)
+        const payment = res.result.payment
+
+        wx.requestPayment({
+          ...payment,
+          success (res) {
+            console.log('支付成功',res)
+          },
+          fail(err){
+            console.log('支付失败',err)
+          }
+        })
+      },
+      fail:res=>{
+        console.log("获取支付参数失败",res)
+      }
+
     })
 }
 },

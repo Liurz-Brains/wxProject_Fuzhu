@@ -5,7 +5,10 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    wx.cloud.init({
+      traceUser: true,
+      env:'empower-pay-5gpfkxg4e8c7f7a8'
+    })
     // 登录
     wx.login({
       success: res => {

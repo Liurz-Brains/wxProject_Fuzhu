@@ -1,5 +1,6 @@
 {
   "description": "项目配置文件",
+  "cloudfunctionRoot": "cloudfunction/",
   "setting": {
     "bundle": false,
     "userConfirmedBundleSwitch": false,
@@ -47,5 +48,6 @@
     "ignore": [],
     "include": []
   },
-  "appid": "wxb043799b00c2dfed"
+  "appid": "wxdd761a1c4a179be5",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }
